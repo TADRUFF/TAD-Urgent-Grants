@@ -1,0 +1,206 @@
+/* Resetting box-sizing and margin for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body takes the full viewport height and centers the content */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Take full viewport height */
+    flex-direction: column;  /* Stack content vertically */
+}
+
+/* Flowchart container */
+.flowchart {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;  /* Center the flowchart items horizontally */
+    width: 100%;
+    max-width: 500px;      /* Limit the max width of the flowchart */
+    margin-bottom: 5px;   /* Ensure space between flowchart and Go Back button */
+}
+
+/* Node styling (bubbles) */
+.node {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    padding: 100px;
+    text-align: center;
+    width: 150%;
+    display: none; /* Hide all nodes initially */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/* Center the content inside the node */
+.node h3, .node p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.p5 {
+    color: red
+}
+
+/* Display the current node when active */
+.node.active {
+    display: block;
+}
+
+/* Button styles for "Proceed" buttons */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 35%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #007BFF;
+}
+
+/* Yes buttons (Green) */
+button.yes {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 25%;
+    font-size: 16px;
+}
+
+button.yes:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* No buttons (Red) */
+button.no {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 25%;
+    font-size: 16px;
+}
+
+button.no:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.node {
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.node.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.node {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+
+/* Additional node styling */
+.attention {
+    background-color: #ffe6e6;
+    border: 2px solid #ff0000; /* Red border for Attention section */
+}
+
+.stop-sign {
+    background-color: #ff0000;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.stop-sign span {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Styling for the Go Back button */
+button.go-back {
+    background-color: #ff9100; /* Red color for Go Back button */
+    color: white; /* White text on the red background */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    align-self: center; /* Center the Go Back button */
+    margin-top: 5px;
+}
+
+/* Centering the Go Back button below the flowchart */
+.go-back-container {
+    margin-top: 40px; /* Add margin to ensure some space from the flowchart */
+    text-align: center; /* Center the Go Back button */
+}
+
+button.go-back:hover {
+    background-color: #ff7b00; /* Darker red on hover */
+}
+
+/* Styling for the list */
+ul {
+    list-style-type: disc;       /* Use bullet points */
+    list-style-position: inside; /* Align the bullet inside the content box */
+    margin-left: 0;             /* Remove left margin on the whole list */
+    color: #555;               /* Subtle color for list items */
+}
+
+li {
+    font-size: 14px;
+    line-height: 1.5;          /* Improve readability with line spacing */
+    text-align: left;          /* Ensure text is left-aligned */
+}
+

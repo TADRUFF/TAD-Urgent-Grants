@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAD Urgent Grants</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flowchart">
+        <!-- First Section: Attention! with Red Stop Sign -->
+        <div class="node attention" id="attention">
+            <div class="stop-sign">
+                <span>ATTENTION!</span>
+            </div>
+            <h3>TAD Urgent Grants</h3>
+            <p>This decision process is intended to assist Airport Sponsors and should be utilized as a tool only. This shall not supersede any federal, state, and/or local requirements on emergency situations.</p>
+            <button onclick="showNextStep('decision')">Proceed</button>
+
+        </div>
+
+        <!-- Second Section: 1st Decision -->
+        <div class="node" id="decision">
+            <h3>Is this the result of
+                a natural or man-made
+                event that warrants
+                action to save lives
+                and protect property
+                and public health?</h3>
+           <button class="yes" onclick="showNextStep('yes')">Yes</button>
+            <button class="no" onclick="showNextStep('no')">No</button>
+
+        </div>
+
+        <!-- Third Section: 1st Yes Option -->
+        <div class="node" id="yes">
+            <h3>Adhere to Sponsor’s
+                Airport Emergency
+                Plan, issue a NOTAM,
+                and consider airport
+                closure procedures
+                in accordance with
+                FAA guidelines.
+                Notify TAD.
+            </h3>
+            <button onclick="showNextStep('decision2')">Proceed</button>
+
+        </div>
+
+         <!-- Fourth Section: 1st No Option -->
+         <div class="node" id="no">
+            <h3>By definition, this
+                does not fall under
+                an emergency, and
+                thus cannot be
+                funded with an
+                urgent grant.</h3>
+            <button onclick="showNextStep('coordination')">Proceed</button>
+
+        </div>
+
+        <!-- Fifth Section: After 1st Yes Option -->
+        <div class="node" id="decision2">
+            <h3>Can the concern be
+                temporarily fixed and
+                mitigated without
+                endangering the safety of
+                the flying public?
+            </h3>
+            <button class="yes" onclick="showNextStep('yes2')">Yes</button>
+            <button class="no" onclick="showNextStep('no2')">No</button>
+
+        </div>
+
+        <!-- Sixth Section: 2nd Yes Option -->
+        <div class="node" id="yes2">
+            <h3>Airport Sponsor
+                should
+                undertake any
+                feasible actions
+                to achieve this
+                first.
+            </h3>
+            <button onclick="showNextStep('no2')">Proceed</button>
+
+        </div>
+        
+        <!-- Seventh Section: 2nd No Option -->
+        <div class="node" id="no2">
+            <h3>Are there any immediate
+                environmental concerns?
+            </h3>
+            <button class="yes" onclick="showNextStep('decision3')">Yes</button>
+            <button class="no" onclick="showNextStep('decision4')">No</button>
+
+        </div>
+
+<!-- Eight Section: 3rd Yes Option -->
+<div class="node" id="decision3">
+    <h3>Refer to NEPA
+        Emergency
+        Alternative
+        Arrangements
+        and coordinate
+        with a TAD NEPA
+        specialist.
+    </h3>
+    <button onclick="showNextStep('decision5')">Proceed</button>
+</div>
+
+<div class="node" id="decision4">
+    <h3>Follow the latest
+        version of the TAD
+        Environmental
+        SOP and
+        coordinate with a
+        TAD NEPA
+        Specialist.
+    </h3>
+    <button onclick="showNextStep('decision5')">Proceed</button>
+    </div>  
+
+<div class="node" id="decision5">
+    <h3>Is this replacement or repair
+        payable by the Airport
+        Sponsor’s available
+        emergency reserve fund
+        (local budget)?
+    </h3>
+    <button class="yes" onclick="showNextStep('decision6')">Yes</button>
+    <button class="no" onclick="showNextStep('decision7')">No</button>
+</div>
+
+<div class="node" id="decision6">
+    <h3>Airport Sponsor to
+        commence urgent
+        project in
+        coordination with
+        TAD and discuss
+        potential
+        reimbursement
+        options.
+    </h3>
+    <button onclick="showNextStep('Apply')">Proceed</button>
+    </div>
+
+    <div class="node" id="decision7">
+        <h3>Is there any available Airport
+            insurance, legal recourse, or
+            funding through another
+            agency responsible for
+            disasters?
+        </h3>
+        <button class="yes" onclick="showNextStep('decision8')">Yes</button>
+        <button class="no" onclick="showNextStep('decision9')">No</button>
+    </div>  
+
+    <div class="node" id="decision8">
+        <h3>Follow the
+            appropriate 3rd party
+            protocol.
+        </h3>
+        <button onclick="showNextStep('coordination')">End Process</button>
+        </div>
+
+        <div class="node" id="decision9">
+            <h3>Explore local low-interest
+                bond and/or loan options.
+            </h3>
+            <p class="p5">Note! Bond/and or loan interest is not reimbursable</p>
+            <button onclick="showNextStep('Apply')">Proceed</button>
+            </div>
+
+    <div class="node" id="Apply">
+        <h3>Apply for the grant in
+            grant management
+            system.
+        </h3>
+        <button onclick="showNextStep('end2')">End Process</button>
+        </div>  
+        <!-- New Section: Coordination and Local Funding -->
+        <div class="node" id="coordination">
+            <h3>Next Steps:</h3>
+            <ul>
+                <li>Coordinate with TAD to discuss possible project incorporation into ACIP.</li>
+                <li>Consider local funding if this is an airport priority.</li>
+            </ul>
+            <button onclick="showNextStep('end')">End Process</button>
+        </div>
+        
+
+        <!-- Final Section: End Process -->
+        <div class="node" id="end">
+            <h3>You may not be eligible for an Urgent Grant.</h3>
+            <p>Please coordinate with the TAD for further assistance.</p>
+        </div>
+    </div>
+
+    <div class="node" id="end2">
+        <h3>You may be eligible for an Urgent Grant!</h3>
+        <p1>Please proceed with your application to the TAD.</p1>
+    </div>
+</div>
+<div class="go-back-container">
+    <button class="go-back" onclick="goBack()">Go Back</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
